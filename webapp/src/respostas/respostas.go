@@ -17,17 +17,11 @@ func JSON(w http.ResponseWriter, statusCode int, dados interface{}) {
 	w.WriteHeader(statusCode)
 
 	if statusCode != http.StatusNoContent {
-		if err := json.NewEncoder(w).Encode(dados); err != nil {
-			log.Fatal(err)
+		if erro := json.NewEncoder(w).Encode(dados); erro != nil {
+			log.Fatal(erro)
 		}
+
 	}
-
-	// if dados != nil {
-	// 	if erro := json.NewEncoder(w).Encode(dados); erro != nil {
-	// 		log.Fatal(erro)
-	// 	}
-
-	// }
 
 }
 
