@@ -170,7 +170,7 @@ func AtualizarPublicacao(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	respostas.JSON(w, http.StatusNoContent, publicacao)
+	respostas.JSON(w, http.StatusNoContent, nil)
 
 }
 
